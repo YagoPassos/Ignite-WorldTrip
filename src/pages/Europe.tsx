@@ -64,7 +64,9 @@ export default function Europe() {
                     pos='absolute'
                     left='36'
                     bottom='14'
-                >Europe</Text>
+                >
+                    Europa
+                </Text>
             </Box>
 
             <Flex
@@ -82,15 +84,15 @@ export default function Europe() {
                 <HStack w='50%' justifyContent='center' spacing='10'>
                     <Flex flexDir='column' justifyContent='center' >
                         <Text color='highlight' fontSize='5xl' fontWeight='semibold' m='auto'>50</Text>
-                        <Text color='gray.text'>Países</Text>
+                        <Text color='gray.text' fontSize='2xl' fontWeight='semibold'>Países</Text>
                     </Flex>
                     <Flex flexDir='column' justifyContent='center'>
                         <Text color='highlight' fontSize='5xl' fontWeight='semibold' m='auto'>60</Text>
-                        <Text color='gray.text'>línguas</Text>
+                        <Text color='gray.text' fontSize='2xl' fontWeight='semibold'>línguas</Text>
                     </Flex>
                     <Flex flexDir='column' justifyContent='center'>
                         <Text color='highlight' fontSize='5xl' fontWeight='semibold' m='auto'>27</Text>
-                        <Text color='gray.text'>cidadas +100</Text>
+                        <Text color='gray.text' fontSize='2xl' fontWeight='semibold'>cidadas +100</Text>
                     </Flex>
                 </HStack>
             </Flex>
@@ -103,25 +105,29 @@ export default function Europe() {
             >
                 <Text fontWeight='medium' fontSize='4xl' color='gray.text'> Cidades +100</Text>
 
-                <Flex>
+                <Flex
+                    flexWrap='wrap'
+                >
                     {cidades.map(cidade => (
                         <Box
                             h='72'
                             w='64'
+                            my='5'
+                            mr='8'
                             border='1px'
                             borderColor='highlight.50'
-                            my='5'
-                            mr='12'
-                            borderRadius='5'
+                            borderRadius='4'
+                            bgColor='white.body'
+
                         >
-                            <Box bgImg={cidade.banner} w='100%' h='62%' bgRepeat='no-repeat' />
+                            <Box borderTopRadius='4' bgImg={cidade.banner} w='100%' h='62%' bgRepeat='no-repeat' bgSize='cover' />
 
                             <Flex alignItems='center' justify='space-around'>
                                 <Flex flexDir='column' justifyContent='center' >
                                     <Text fontWeight='semibold' fontSize='xl' color='gray.text' my='4'>{cidade.cityName}</Text>
                                     <Text fontWeight='medium' fontSize='md' color='info.dark'>{cidade.country}</Text>
                                 </Flex>
-                                <Box w='8' h='8' bgImg={cidade.flag} borderRadius='100%' />
+                                <Box w='8' h='8' bgImg={cidade.flag} bgRepeat='no-repeat' bgSize='cover' borderRadius='100%' />
                             </Flex>
                         </Box>
                     ))}

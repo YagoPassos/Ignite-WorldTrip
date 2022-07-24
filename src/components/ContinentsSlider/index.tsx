@@ -50,7 +50,7 @@ export default function Slider() {
         <Flex
             w='100%'
             h='md'
-            my='12'
+            my='8'
             justifyContent='center'
         >
             <Flex
