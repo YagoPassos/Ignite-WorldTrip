@@ -49,7 +49,7 @@ export default function Slider() {
     return (
         <Flex
             w='100%'
-            h='md'
+            h={{base:'64', lg:'md'}}
             my='8'
             justifyContent='center'
         >
@@ -57,7 +57,7 @@ export default function Slider() {
                 w='100%'
                 h='100%'
                 maxW={1240}
-                maxH={450}
+                maxH={{base:'250px', lg:'450px'}}
                 bgColor='info.dark'
                 overflow='hidden'
             >
@@ -73,10 +73,10 @@ export default function Slider() {
                     {continents.map(continent => (
                         <SwiperSlide className="swiper-slide">
                             <Box pos='absolute' m='auto'>
-                                <Text fontWeight='bold' fontSize='5xl'>
+                                <Text fontWeight='bold' fontSize={{base:'2xl', lg:'5xl'}}>
                                     {continent.title}
                                 </Text>
-                                <Text fontWeight='bold' fontSize='2xl'>
+                                <Text fontWeight='bold' fontSize={{base:'md', lg:'2xl'}} color='info.light'>
                                     {continent.subtitle}
                                 </Text>
                             </Box>

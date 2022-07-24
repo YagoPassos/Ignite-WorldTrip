@@ -32,9 +32,22 @@
     object-fit: cover;
   }
 
-.swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet-active {
+.swiper-button-prev::after, .swiper-button-next::after{
+  width:60px;
+  height:60px;
   color: #FFBA08;
 }
+.swiper-pagination-bullet-active {
+  color: #FFBA08;
+}
+
+@media screen and (max-width: 990px){
+  .swiper-button-prev::after, .swiper-button-next::after {
+    width:32px;
+    height:32px;
+    color: #FFBA08;
+  }
+};
 
 .swiper-pagination-bullet{
   width: 1rem;
