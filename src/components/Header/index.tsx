@@ -26,7 +26,7 @@ export default function Header({ backButton = false }: HeaderProps) {
                             as='a'
                             fontSize='4xl'
                             color='gray.text'
-                            left='36'
+                            left={{base:'10', lg:'36'}}
                         >
                             <Image cursor='pointer' src={'/images/BackButton.svg'} />
                         </Box>

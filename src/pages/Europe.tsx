@@ -51,7 +51,7 @@ export default function Europe() {
             <Header backButton={true} />
             <Box
                 w='100%'
-                h={500}
+                h={{ base: '150px', lg: '500px' }}
                 maxH={500}
                 bgImg={'/images/EuropeBanner.svg'}
                 bgRepeat='no-repeat'
@@ -60,7 +60,7 @@ export default function Europe() {
             >
                 <Text
                     fontWeight='semibold'
-                    fontSize='5xl'
+                    fontSize={{ base: '3xl', lg: '5xl' }}
                     pos='absolute'
                     left='36'
                     bottom='14'
@@ -73,26 +73,27 @@ export default function Europe() {
                 w='100%'
                 maxW={1160}
                 h='80'
-                my='20'
+                my={{ base: '5', lg: '20' }}
                 mx='auto'
+                flexDir={{ base: 'column', lg: 'row' }}
                 justifyContent='center'
                 alignItems='center'
             >
-                <Text w='50%' color='gray.text' fontSize='2xl' textAlign='justify'>
+                <Text w='90%' color='gray.text' fontSize={{ base: 'md', lg: '2xl' }} textAlign='justify' m={{ base: '4', lg: '0' }}>
                     A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
                 </Text>
-                <HStack w='50%' justifyContent='center' spacing='10'>
+                <HStack w='90%' justifyContent='center' spacing={{ base: '8', lg: '10' }} mx={{ base: '4', lg: '0' }}>
                     <Flex flexDir='column' justifyContent='center' >
-                        <Text color='highlight' fontSize='5xl' fontWeight='semibold' m='auto'>50</Text>
-                        <Text color='gray.text' fontSize='2xl' fontWeight='semibold'>Países</Text>
+                        <Text color='highlight' fontSize={{ base: '2xl', lg: '5xl' }} fontWeight='semibold' m='auto'>50</Text>
+                        <Text color='gray.text' fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='semibold'>Países</Text>
                     </Flex>
                     <Flex flexDir='column' justifyContent='center'>
-                        <Text color='highlight' fontSize='5xl' fontWeight='semibold' m='auto'>60</Text>
-                        <Text color='gray.text' fontSize='2xl' fontWeight='semibold'>línguas</Text>
+                        <Text color='highlight' fontSize={{ base: '2xl', lg: '5xl' }} fontWeight='semibold' m='auto'>60</Text>
+                        <Text color='gray.text' fontSize={{ base: 'lg', lg: '2xl' }} fontWeight='semibold'>línguas</Text>
                     </Flex>
                     <Flex flexDir='column' justifyContent='center'>
-                        <Text color='highlight' fontSize='5xl' fontWeight='semibold' m='auto'>27</Text>
-                        <Text color='gray.text' fontSize='2xl' fontWeight='semibold'>cidadas +100</Text>
+                        <Text color='highlight' fontSize={{ base: '2xl', lg: '5xl' }} fontWeight='semibold' m='auto'>27</Text>
+                        <Text color='gray.text' fontSize={{ base: 'md', lg: '2xl' }} fontWeight='semibold'>cidades +100</Text>
                     </Flex>
                 </HStack>
             </Flex>
@@ -103,33 +104,34 @@ export default function Europe() {
                 maxW={1160}
                 mx='auto'
             >
-                <Text fontWeight='medium' fontSize='4xl' color='gray.text'> Cidades +100</Text>
+                <Text fontWeight='medium' ml={{ base: '4', lg: '0' }} fontSize={{ base: '2xl', lg: '4xl' }} color='gray.text'> Cidades +100</Text>
 
                 <Flex
                     flexWrap='wrap'
+                    justifyContent={{ base: 'center' }}
                 >
                     {cidades.map(cidade => (
-                        <Box
+                        <Flex
                             h='72'
                             w='64'
                             my='5'
                             mr='8'
-                            border='1px'
-                            borderColor='highlight.50'
+                            flexDir='column'
                             borderRadius='4'
                             bgColor='white.body'
+                            key={cidade.cityName}
 
                         >
-                            <Box borderTopRadius='4' bgImg={cidade.banner} w='100%' h='62%' bgRepeat='no-repeat' bgSize='cover' />
+                            <Box borderTopRadius='3' bgImg={cidade.banner} w='100%' h='62%' bgRepeat='no-repeat' bgSize='cover' />
 
-                            <Flex alignItems='center' justify='space-around'>
-                                <Flex flexDir='column' justifyContent='center' >
+                            <Flex alignItems='center' justifyContent='space-around' h='38%' borderLeft='1px' borderRight='1px' borderBottom='1px' borderColor='highlight.50' borderBottomRadius='4'>
+                                <Flex flexDir='column' justifyContent='center'>
                                     <Text fontWeight='semibold' fontSize='xl' color='gray.text' my='4'>{cidade.cityName}</Text>
                                     <Text fontWeight='medium' fontSize='md' color='info.dark'>{cidade.country}</Text>
                                 </Flex>
                                 <Box w='8' h='8' bgImg={cidade.flag} bgRepeat='no-repeat' bgSize='cover' borderRadius='100%' />
                             </Flex>
-                        </Box>
+                        </Flex>
                     ))}
                 </Flex>
 
