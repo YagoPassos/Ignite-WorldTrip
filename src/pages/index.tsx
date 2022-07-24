@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <Flex
       flexDirection='column'
       >
-        <Header />
+        <Header/>
         <Banner/>
         <TravelTypes/>
         <Slider/>
